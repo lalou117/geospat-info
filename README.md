@@ -6,7 +6,7 @@ A cloud-hosted Linux environment for deploying and maintaining web services, net
 
 ## Technologies
 
--Ubuntu Server
+-Ubuntu
 -Nginx
 -Cloudflare DNS/CDN
 -SSL/TLS
