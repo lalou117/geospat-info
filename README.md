@@ -1,14 +1,17 @@
-# linux-server-administration
+# geospat.info
 
 ## Overview
 
-A cloud-hosted Linux environment for deploying and maintaining web services, network components, and automation tools.
+A website hosting a collection of projects centered around networking and cloud infrastructure with a GIS focus.
 
-## Technologies
+## Current Focus
 
--Ubuntu
--Nginx
--Cloudflare DNS/CDN
--SSL/TLS
--SSH
--Bash
+-Linux
+-Leaflet
+-Python
+-OpenLayers
+-PostGIS
+-GeoServer
+-ArcGIS
+
+More projects and documentation will be added over time.
