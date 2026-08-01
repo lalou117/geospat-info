@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# ==========================================
+# System Health Report
+# Generates a basic system health report.
+# ==========================================
+
+REPORT="system_report_$(date +%Y-%m-%d_%H-%M-%S).txt"
+
+echo "===================================" > "$REPORT"
+echo "      SYSTEM HEALTH REPORT" >> "$REPORT"
+echo "Generated: $(date)" >> "$REPORT"
+echo "===================================" >> "$REPORT"
+echo ""
+
+# Hostname
+echo "Hostname:" >> "$REPORT"
+hostname >> "$REPORT"
+echo "" >> "$REPORT"
+
+# Uptime
+echo "System Uptime:" >> "$REPORT"
+uptime -p >> "$REPORT"
+echo "" >> "$REPORT"
+
+# CPU Load
+echo "CPU Load Average:" >> "$REPORT"
+uptime | awk -F'load average:' '{print $2}' >> "$REPORT"
+echo "" >> "$REPORT"
+
+# Memory Usage
+echo "Memory Usage:" >> "$REPORT"
+free -h >> "$REPORT"
+echo "" >> "$REPORT"
+
+# Disk Usage
+echo "Disk Usage:" >> "$REPORT"
+df -h >> "$REPORT"
+echo "" >> "$REPORT"
+
+# Top Processes
+echo "Top 5 CPU Processes:" >> "$REPORT"
+ps -eo pid,comm,%cpu --sort=-%cpu | head -6 >> "$REPORT"
+echo "" >> "$REPORT"
+
+# Logged-in Users
+echo "Logged-in Users:" >> "$REPORT"
+who >> "$REPORT"
+echo "" >> "$REPORT"
+
+echo "===================================" >> "$REPORT"
+echo "Report Complete." >> "$REPORT"
+
+echo "Report saved as: $REPORT"
