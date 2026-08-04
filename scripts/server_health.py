@@ -3,8 +3,7 @@ import socket
 from datetime import datetime
 
 SITES = [
-    "https://example.com",
-    "https://subdomain.example.com",
+    #site(s)
 ]
 
 TIMEOUT = 5
